@@ -36,7 +36,7 @@ int main() {
     int isADown = is_down(display, returnKeys, aKey);
     int isDDown = is_down(display, returnKeys, dKey);
 
-    if (!(isADown && isDDown)) {
+    if (!isADown || !isDDown) {
       if (isADown) {
         XTestFakeKeyEvent(display, dKey, False, 0);
       }
