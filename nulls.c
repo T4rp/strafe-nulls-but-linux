@@ -4,7 +4,7 @@
 #include <stdio.h>
 #include <unistd.h>
 
-int is_down(Display *disp, char returnKeys[32], KeyCode keycode) {
+int is_down(char returnKeys[32], KeyCode keycode) {
   int i = keycode / 8;
   int r = keycode % 8;
   int mask = 1 << r;
@@ -33,8 +33,8 @@ int main() {
   while (1) {
     XQueryKeymap(display, returnKeys);
 
-    int isADown = is_down(display, returnKeys, aKey);
-    int isDDown = is_down(display, returnKeys, dKey);
+    int isADown = is_down(returnKeys, aKey);
+    int isDDown = is_down(returnKeys, dKey);
 
     if (!isADown || !isDDown) {
       if (isADown) {
