@@ -1,2 +1,2 @@
 nulls: nulls.c
-	gcc -lX11 -lXtst ./nulls.c -o nulls
+	gcc -Wall -lX11 -lXtst ./nulls.c -o nulls
